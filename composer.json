@@ -1,0 +1,48 @@
+{
+    "name": "italix/mail",
+    "description": "Transactional mail that cannot fail silently: the log row is written before the transport is touched. SMTP in core, PHPMailer optional.",
+    "type": "library",
+    "license": "MPL-2.0",
+    "version": "2.0.0",
+    "keywords": [
+        "mail",
+        "smtp",
+        "transactional",
+        "mime",
+        "logging"
+    ],
+    "homepage": "https://github.com/italix-net/mail",
+    "authors": [
+        {
+            "name": "Italix",
+            "email": "info@italix.net"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "ext-mbstring": "*"
+    },
+    "suggest": {
+        "ext-openssl": "Required for STARTTLS and implicit TLS in SmtpTransport",
+        "ext-pdo": "Required by PdoMailLog, the only log shipped in core"
+    },
+    "require-dev": {
+        "italix/testing": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Italix\\Mail\\": ""
+        },
+        "files": [
+            "functions.php"
+        ]
+    },
+    "scripts": {
+        "test": [
+            "php tests/MessageTest.php",
+            "php tests/MailerTest.php"
+        ]
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
